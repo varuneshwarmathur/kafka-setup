@@ -1,6 +1,9 @@
 #!/bin/bash
 
 cmd=${1}
+USERNAME=${2}
+USER_PASS${3}
+HOSTNAME=${4}
 script=$(basename $0)
 projectname=kafkacluster
 kafka_image=spiside/kafka-cluster
@@ -12,7 +15,8 @@ docker_compose() {
 
 if [ -n "$cmd" ] && [ "$cmd" = 'setup' ]; then
 
-        # Check that the image exists and, if not, pull it.
+        # Check that the image exists and, if not, pull it.\
+
         docker inspect spiside/kafka-cluster &> /dev/null
         if [ $? -ne 0 ]; then
             echo "Docker image doesn't exist, pulling..."

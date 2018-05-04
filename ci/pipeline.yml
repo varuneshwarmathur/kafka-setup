@@ -15,7 +15,7 @@ jobs:
     - task: run-setup
       config:
           inputs:
-          - name: my-repo
+          - name: git-repo
           platform: linux
           image_resource:
             type: docker-image
